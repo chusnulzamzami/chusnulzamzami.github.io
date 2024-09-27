@@ -49,3 +49,93 @@ svg:hover {
     margin: 0 auto;
   }
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Jarak antar gambar */
+  justify-items: center; /* Gambar berada di tengah setiap kolom */
+}
+.grid-container img {
+  width: 200px; /* Ukuran gambar */
+  height: auto;
+}
+.grid-container p {
+  text-align: center;
+}
+.highlight {
+  color: #007BFF; /* Warna biru */
+  font-weight: bold; /* Tebal */
+}
+.section-title {
+  color: #28A745; /* Warna hijau */
+}
+.sub-title {
+  color: #DC3545; /* Warna merah */
+}
+/* Mengatur margin untuk kontainer utama */
+.container {
+  max-width: 1100px; /* Atur lebar maksimum kontainer */
+  margin-left: auto; /* Margin kiri otomatis untuk sentralisasi */
+  margin-right: auto; /* Margin kanan otomatis untuk sentralisasi */
+  padding-left: 15px; /* Padding kiri */
+  padding-right: 15px; /* Padding kanan */
+}
+
+/* Mengatur margin untuk bagian proyek */
+.proyek {
+  margin: 20px 0; /* Margin atas dan bawah */
+}
+
+/* Mengatur gaya teks di dalam div */
+.text-center {
+  text-align: center; /* Teks di tengah */
+}
+
+/* Menambahkan gaya untuk judul */
+.section-title {
+  font-size: 24px; /* Ukuran font untuk judul bagian */
+  margin-top: 20px; /* Margin atas untuk judul */
+  margin-bottom: 10px; /* Margin bawah untuk judul */
+}
+
+/* Menambahkan highlight pada teks */
+.highlight {
+  color: #007BFF; /* Warna teks yang di-highlight */
+  font-weight: bold; /* Membuat teks tebal */
+}
+
+/* Mengatur daftar */
+ul {
+  list-style-type: disc; /* Jenis daftar */
+  margin-left: 20px; /* Margin kiri untuk daftar */
+}
+
+/* Mengatur padding pada paragraf */
+p {
+  margin-bottom: 15px; /* Margin bawah untuk paragraf */
+}
+/* Gaya untuk link tombol */
+.btn {
+  text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+}
+
+/* Gaya untuk tombol */
+.btn button {
+  background-color: #006aff; /* Warna latar belakang tombol */
+  color: white; /* Warna teks */
+  border: none; /* Menghilangkan border */
+  padding: 10px 20px; /* Ruang di dalam tombol */
+  text-align: center; /* Rata tengah teks */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  display: inline-block; /* Mengatur tampilan tombol */
+  font-size: 16px; /* Ukuran font */
+  margin: 10px 2px; /* Margin sekitar tombol */
+  cursor: pointer; /* Mengubah kursor saat hover */
+  border-radius: 10px; /* Sudut melengkung */
+  transition: background-color 1s; /* Efek transisi untuk hover */
+}
+
+/* Efek hover */
+.btn button:hover {
+  background-color: #00e313; /* Warna latar belakang saat hover */
+}

@@ -102,6 +102,7 @@ svg:hover {
 .highlight {
   color: #007BFF; /* Warna teks yang di-highlight */
   font-weight: bold; /* Membuat teks tebal */
+  text-align: center;
 }
 
 /* Mengatur daftar */
@@ -138,4 +139,58 @@ p {
 /* Efek hover */
 .btn button:hover {
   background-color: #00e313; /* Warna latar belakang saat hover */
+}
+
+.btn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: blue;
+  color: white;
+}
+h3.highlight {
+  color: blue; /* Warna biru untuk poin besar */
+  border-bottom: 2px solid rgb(0, 0, 0); /* Garis bawah warna putih */
+  padding-bottom: 10px; /* Memberi jarak antara teks dan garis */
+}
+.box-container {
+  border: 1px solid #ddd; /* Border untuk kotak */
+  padding: 15px;          /* Jarak antara isi dan border */
+  margin: 20px;           /* Jarak antara kotak dengan elemen lainnya */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  border-radius: 8px;     /* Membuat sudut kotak menjadi melengkung */
+  text-align: center;     /* Memusatkan isi di dalam kotak */
+  background-color: #f9f9f9; /* Warna latar belakang kotak */
+  max-width: 300px;       /* Lebar maksimal kotak */
+}
+
+/* Image styling */
+.box-image {
+  width: 100%;            /* Gambar memenuhi lebar kotak */
+  height: 200px;          /* Ketinggian tetap untuk gambar */
+  object-fit: cover;      /* Menyesuaikan gambar agar sesuai dengan kotak tanpa distorsi */
+  border-radius: 8px;     /* Sudut gambar melengkung */
+}
+
+/* Title styling */
+.box-title {
+  font-size: 18px;        /* Ukuran font untuk judul */
+  font-weight: bold;      /* Membuat teks lebih tebal */
+  margin-top: 10px;       /* Jarak antara gambar dan judul */
+}
+
+/* Description styling */
+.box-description {
+  font-size: 14px;        /* Ukuran font untuk deskripsi */
+  color: #666;            /* Warna teks deskripsi */
+  margin-bottom: 0;       /* Menghilangkan margin bawah */
 }

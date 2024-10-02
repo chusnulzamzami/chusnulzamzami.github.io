@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan 2</title>
+    <link rel="icon" href="img/stik.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <section class="proyek" id="proyek">
+        <div class="container mx-auto mb-5">
+            <div class="col mb-5">
+                <div class="mt-5 text-center">
+                    <h3 class="highlight">Laporan 2 Pratikum Sistem Paralel dan Terdistribusi</h3>
+                    <h4 class="section-title">KONFIGURASI IP ADDRESS MENGGUNAKAN MIKROTIK</h4>
+                    <h4>Disusun untuk memenuhi tugas mata kuliah <br> Sistem Paralel dan Terdistribusi</h4>
+                    <h4>Oleh:</h4>
+                    <h4>CHUSNUL ZAMZAMI <br>(2208001010026)</h4>
+                    <img src="img/usk.png" alt="Logo" style="width: 20%; height: auto;">
+                    <h4>PROGRAM STUDI DIII MANAJEMEN INFORMATIKA<br>
+                    JURUSAN INFORMATIKA<br>
+                    FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM<br>
+                    UNIVERSITAS SYIAH KUALA<br>
+                    BANDA ACEH, SEPTEMBER 2024</h4>
+                </div>
+    
+                <h4 class="section-title">PEMBAHASAN</h4>
+    
+                <h3 class="highlight">1. IP Address</h3>
+                <p>IP Address (Internet Protocol Address) adalah sebuah alamat unik yang digunakan untuk mengidentifikasi perangkat dalam jaringan komputer atau internet. Setiap perangkat yang terhubung ke internet, seperti komputer, ponsel, atau server, memiliki IP Address agar dapat saling berkomunikasi dan bertukar data.</p>
+    
+                <h3 class="highlight">2. Jenis-Jenis IP Address</h3>
+                <ul>
+                    <li><strong>IPv4 (Internet Protocol version 4):</strong>
+                        Menggunakan format angka desimal yang dipisahkan oleh titik, misalnya 192.168.0.1. IPv4 terdiri dari empat kelompok angka (masing-masing 8 bit), dengan total 32 bit, sehingga menghasilkan sekitar 4,3 miliar alamat unik.
+                    </li>
+                    <li><strong>IPv6 (Internet Protocol version 6):</strong>
+                        Menggunakan format yang lebih panjang, yang terdiri dari angka dan huruf heksadesimal yang dipisahkan oleh tanda titik dua, misalnya 2001:0db8:85a3:0000:0000:8a2e:0370:7334. IPv6 menggunakan 128 bit, sehingga mampu menyediakan jumlah alamat yang jauh lebih banyak dibandingkan IPv4.
+                    </li>
+                </ul>
+    
+                <h3 class="highlight">3. IP Address dibagi menjadi dua kategori:</h3>
+                <ul>
+                    <li><strong>Public IP Address:</strong> Alamat yang digunakan untuk mengidentifikasi perangkat yang dapat diakses melalui internet.</li>
+                    <li><strong>Private IP Address:</strong> Alamat yang digunakan untuk mengidentifikasi perangkat di dalam jaringan lokal (misalnya, dalam rumah atau kantor).</li>
+                </ul>
+    
+                <h3 class="highlight">4. Class IP Address</h3>
+                <ul>
+                    <li><strong>Class A:</strong>
+                        <ul>
+                            <li>Rentang IP Address: 1.0.0.0 hingga 126.0.0.0</li>
+                            <li>Subnet Mask Default: 255.0.0.0</li>
+                            <li>Jumlah Host: 16.777.214 alamat IP per jaringan</li>
+                            <li>Karakteristik: Class A digunakan untuk jaringan besar dengan banyak perangkat. Octet pertama berkisar dari 1 hingga 126.</li>
+                            <li>Contoh IP Address: 10.0.0.1 dengan subnet mask 255.0.0.0.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Class B:</strong>
+                        <ul>
+                            <li>Rentang IP Address: 128.0.0.0 hingga 191.255.0.0</li>
+                            <li>Subnet Mask Default: 255.255.0.0</li>
+                            <li>Jumlah Host: 65.534 alamat IP per jaringan</li>
+                            <li>Karakteristik: Class B digunakan untuk jaringan menengah hingga besar. Octet pertama berkisar dari 128 hingga 191.</li>
+                            <li>Contoh IP Address: 172.16.0.1 dengan subnet mask 255.255.0.0.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Class C:</strong>
+                        <ul>
+                            <li>Rentang IP Address: 192.0.0.0 hingga 223.255.255.0</li>
+                            <li>Subnet Mask Default: 255.255.255.0</li>
+                            <li>Jumlah Host: 254 alamat IP per jaringan</li>
+                            <li>Karakteristik: Class C digunakan untuk jaringan kecil dengan perangkat terbatas. Octet pertama berkisar dari 192 hingga 223.</li>
+                            <li>Contoh IP Address: 192.168.1.1 dengan subnet mask 255.255.255.0.</li>
+                        </ul>
+                    </li>
+                </ul>
+    
+                <h3 class="highlight">5. Konfigurasi IP Address melalui Winbox</h3>
+                <ol>
+                    <li>Hal yang pertama dilakukan yaitu menghidupkan mikrotiknya dengan menancapkan kabel power ke sumber listrik.</li>
+                    <li>Pasang kabel LAN (RJ45) pada Ether1 dan ujung kabel LAN satunya lagi ke sumber internet (ISP).</li>
+                    <li>Kemudian pasang kabel LAN lagi untuk menghubungkan ke perangkat PC/Laptop Client dengan menancapkan kabel LAN ke Ether2 dan sambung ke PC/Laptop Client.</li> <b>Contoh topologi perangkatnya kurang lebih seperti ini:</b> <br>
+                    <img src="img/topologi mikrotik.png" alt="r" style="width: 40%; height: auto;">
+                    <li>Lalu masuk ke aplikasi Winbox dan setting IP Address dengan cara masuk ke menu <br><b>IP > Address</b>.</li><br>
+                    <img src="img/menu awal mikrotik.png" alt="r" style="width: 30%; height: auto;">
+                    <li>Isi kolom Address sesuai IP yang diinginkan dan arahkan pada interface yang ingin dikonfigurasi.</li><br>
+                    <img src="img/kolom set ip1.jpg" alt="r" style="width: 30%; height: auto;">
+                    <li>Setelah mengisi IP Address dan memilih interface klik Apply > OK.</li><br>
+                    <img src="img/interface.jpg" alt="r" style="width: 30%; height: auto;">
+                </ol>
+            </div>
+        </div>
+        <a href="index.html" class="btn">
+            <button>Balik ke Halaman Utama</button>
+        </a>
+    </section>    
+</body>
+</html>

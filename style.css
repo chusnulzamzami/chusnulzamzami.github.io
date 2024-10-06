@@ -8,6 +8,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  line-height: 1.5; /* Menambah jarak antar baris teks */
 }
 
 svg:hover {
@@ -77,8 +78,8 @@ svg:hover {
   max-width: 1100px; /* Atur lebar maksimum kontainer */
   margin-left: auto; /* Margin kiri otomatis untuk sentralisasi */
   margin-right: auto; /* Margin kanan otomatis untuk sentralisasi */
-  padding-left: 15px; /* Padding kiri */
-  padding-right: 15px; /* Padding kanan */
+  padding-left: 400px; /* Padding kiri */
+  padding-right: 400px; /* Padding kanan */
 }
 
 /* Mengatur margin untuk bagian proyek */
@@ -113,7 +114,7 @@ ul {
 
 /* Mengatur padding pada paragraf */
 p {
-  margin-bottom: 15px; /* Margin bawah untuk paragraf */
+  margin-bottom: 25px; /* Margin bawah untuk paragraf */
 }
 /* Gaya untuk link tombol */
 .btn {
@@ -193,4 +194,13 @@ h3.highlight {
   font-size: 14px;        /* Ukuran font untuk deskripsi */
   color: #666;            /* Warna teks deskripsi */
   margin-bottom: 0;       /* Menghilangkan margin bawah */
+}
+
+img {
+  margin: 10px 0; /* Memberikan jarak atas dan bawah pada gambar */
+}
+
+ul, ol {
+  margin-bottom: 30px; /* Memberikan jarak bawah pada daftar */
+  padding-left: 20px; /* Memberikan jarak kiri pada daftar */
 }

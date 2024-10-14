@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan 5</title>
+    <link rel="icon" href="img/stik.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <section class="proyek" id="proyek">
+        <div class="container mx-auto mb-5">
+            <div class="col mb-5">
+                <div class="mt-5 text-center">
+                    <h3 class="highlight">Laporan V Pratikum Sistem Paralel dan Terdistribusi</h3>
+                    <h4 class="section-title">Cara konfigurasi routing static 3 mikrotik</h4>
+                    <h4>Disusun untuk memenuhi tugas mata kuliah <br> Sistem Paralel dan Terdistribusi</h4>
+                    <h4>Oleh:</h4>
+                    <h4>CHUSNUL ZAMZAMI <br>(2208001010026)</h4>
+                    <img src="img/usk.png" alt="Logo" style="width: 20%; height: auto;">
+                    <h4>PROGRAM STUDI DIII MANAJEMEN INFORMATIKA<br>
+                    JURUSAN INFORMATIKA<br>
+                    FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM<br>
+                    UNIVERSITAS SYIAH KUALA<br>
+                    BANDA ACEH, OKTOBER 2024</h4>
+                </div>
+    
+                <h4 class="section-title">PEMBAHASAN</h4>
+                    <h3 class="highlight">1. Topologi dan Persiapan Awal</h3>
+                    <p>Sebelum masuk ke konfigurasi, kita perlu menentukan topologi jaringan dan alamat IP yang akan digunakan.</p>
+
+                    <h4>MikroTik 1 (R1):</h4>
+                    <ul>
+                        <li>Interface ether1: 10.10.10.1/24</li>
+                        <li>Interface ether2: 192.168.100.1/24</li>
+                    </ul>
+
+                    <h4>MikroTik 2 (R2):</h4>
+                    <ul>
+                        <li>Interface ether1: 10.10.10.2/24</li>
+                        <li>Interface ether2: 11.11.11.1/24/24</li>
+                        <li>Interface ether3: 192.168.200.1/24</li>
+                    </ul>
+
+                    <h4>MikroTik 3 (R3):</h4>
+                    <ul>
+                        <li>Interface ether1: 11.11.11.2/24</li>
+                        <li>Interface ether2: 192.168.50.1/24</li>
+                    </ul>
+
+                    <h4>Diagram Topologi:</h4>
+                    <div class="mt-5 text-center"><img src="img/topologi.jpg" alt="r" style="width: 50%; height: auto;"></div>
+
+                    <h3 class="highlight">2. Langkah Konfigurasi MikroTik</h3>
+                    <h4>2.1. Konfigurasi IP Address</h4>
+                    <p>Berikut ini langkah-langkah konfigurasi IP address pada setiap MikroTik:</p>
+
+                    <h4>Langkah pada MikroTik 1 (R1):</h4>
+                    <ul>
+                        <li>Masuk ke menu IP > Addresses dan tambahkan IP Address.</li>
+                        <li>Interface: ether1 | Address: 10.10.10.1/24</li>
+                        <li>Tambahkan lagi: Interface: ether2 | Address: 192.168.100.1/24</li>
+                    </ul>
+
+                    <h4>Langkah pada MikroTik 2 (R2):</h4>
+                    <ul>
+                        <li>Interface ether1: 10.10.10.2/24</li>
+                        <li>Interface ether2: 11.11.11.1/24/24</li>
+                        <li>Interface ether3: 192.168.200.1/24</li>
+                    </ul>
+
+                    <h4>Langkah pada MikroTik 3 (R3):</h4>
+                    <ul>
+                        <li>Interface ether1: 11.11.11.2/24</li>
+                        <li>Interface ether2: 192.168.50.1/24</li>
+                    </ul>
+
+                    <h4>2.2. Konfigurasi Static Routing</h4>
+                    <p>Setelah konfigurasi IP, tambahkan routing statis sebagai berikut:</p>
+
+                    <h4>Konfigurasi di MikroTik 1 (R1):</h4>
+                    <ul>
+                        <li>Dst. Address: 192.168.2.0/24 | Gateway: 11.11.11.1/24</li>
+                        <li>Dst. Address: 192.168.3.0/24 | Gateway: 192.168.12.2</li>
+                    </ul>
+
+                    <h4>Konfigurasi di MikroTik 2 (R2):</h4>
+                    <ul>
+                        <li>Dst. Address: 192.168.1.0/24 | Gateway: 192.168.12.1</li>
+                        <li>Dst. Address: 192.168.3.0/24 | Gateway: 192.168.50.1</li>
+                    </ul>
+
+                    <h4>Konfigurasi di MikroTik 3 (R3):</h4>
+                    <ul>
+                        <li>Dst. Address: 192.168.1.0/24 | Gateway: 192.168.200.1</li>
+                        <li>Dst. Address: 192.168.2.0/24 | Gateway: 192.168.200.1</li>
+                    </ul>
+
+                    <h4>2.3. Testing Koneksi Antar MikroTik</h4>
+                    <p>Gunakan <code>ping</code> untuk memastikan koneksi:</p>
+                    <ul>
+                        <li><code>ping 192.168.2.1</code> (dari MikroTik 1 ke MikroTik 2)</li>
+                        <li><code>ping 11.11.11.2</code> (dari MikroTik 1 ke MikroTik 3)</li>
+                    </ul>
+
+                    <h4>2.4. Troubleshooting Koneksi (Opsional)</h4>
+                    <p>Jika terjadi masalah koneksi:</p>
+                    <ul>
+                        <li>Cek IP Address dan routing.</li>
+                        <li>Pastikan interface aktif.</li>
+                        <li>Nonaktifkan sementara firewall jika perlu.</li>
+                    </ul>
+                    <h3 class="highlight">3. Kesimpulan</h3>
+                    <p>
+<strong>Konektivitas Terjamin:</strong> <br>
+    Setelah semua IP address dan routing statis dikonfigurasi, setiap router dapat berkomunikasi dengan jaringan lain, 
+    memastikan konektivitas end-to-end di seluruh jaringan.
+</p>
+<p>
+    <strong>Penggunaan Routing Statis:</strong> <br>
+    Static routing memberikan kontrol penuh kepada administrator dalam menentukan jalur jaringan, 
+    namun membutuhkan konfigurasi manual setiap kali ada perubahan.
+</p>
+<p>
+    <strong>Topologi Terstruktur:</strong> <br>
+    Dengan topologi yang jelas dan terhubung melalui tiga router, setiap jaringan lokal (LAN) dapat berkomunikasi 
+    tanpa hambatan melalui jalur yang telah ditentukan.
+</p>
+<p>
+    <strong>Verifikasi Berhasil:</strong> <br>
+    Pengujian menggunakan perintah <code>ping</code> memastikan bahwa rute yang dikonfigurasi berfungsi dengan baik 
+    dan paket dapat diteruskan antara semua jaringan.
+</p>
+<p>
+    <strong>Pentingnya Konfigurasi yang Tepat:</strong> <br>
+    Kesalahan dalam pengaturan IP atau routing dapat menyebabkan gangguan komunikasi. Oleh karena itu, 
+    pengecekan IP, rute, dan status interface sangat penting selama proses konfigurasi.
+</p>
+<p>
+    <strong>Manfaat Static Routing:</strong> <br>
+    Routing statis cocok untuk jaringan kecil hingga menengah karena menawarkan stabilitas dan menghindari overhead 
+    seperti yang terjadi pada dynamic routing, meskipun memerlukan lebih banyak waktu untuk pemeliharaan.
+</p>
+
+                    
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="btn">
+            <button>Balik ke Halaman Utama</button>
+        </a>
+    </section>    
+</body>
+</html>
